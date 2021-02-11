@@ -46,7 +46,8 @@ body {
     position: sticky;
   }
 
-   nav {
+
+  nav {
     background-color: #0a1d3d73;
     z-index: 100;
     height: 10vh;
@@ -141,7 +142,6 @@ nav ul li a:hover {
         left:0;
     }
 }
-
 
   .wave {
     position: absolute;

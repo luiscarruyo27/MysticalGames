@@ -1,3 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
 body {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: #6e34b9;
@@ -38,13 +46,102 @@ body {
     position: sticky;
   }
 
-  .navigation {
-    background: rgba(32, 12, 53, 0.692);
-    border-radius: 15px;
-    right: 0;
-    padding: 30px 50px 10px 10px;
-    position: fixed;
-  }
+   nav {
+    background-color: #0a1d3d73;
+    z-index: 100;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    letter-spacing: .7rem;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    border-right:  1px solid rgba(92, 89, 89, 0.41);
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    padding: .8rem 1rem;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    background-color: #5b79a2;
+    transition: all .3s;
+    border-bottom: solid .2rem #2e4469;
+}
+
+.drawer {
+    font-size: 1rem;
+    color: white;
+    float: left;
+    cursor: pointer;
+    display: none;
+    margin-left: 1rem;
+    border: solid 1.5px white;
+    padding: .2rem;
+    border-radius: .1rem;
+}
+
+#ckbox {
+    display: none;
+}
+
+@media (max-width:1039px) {
+    nav{
+        justify-content: flex-start;
+    }
+    .drawer{
+        display: block;
+    }
+
+    nav h1{
+        margin-left: 1rem;
+    }
+
+    ul {
+        position: fixed;
+        width: 30%;
+        height: 600px;
+        z-index: 100;
+        background-color: #061f3a;
+        top: 10vh;
+        left:-100%;
+        text-align: left;
+        transition: all .5s;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+    }
+
+    nav ul li {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        border-bottom: solid .1rem rgba(201, 196, 196, 0.4);
+    }
+
+    #ckbox:checked  ~ .menu-box{
+        left:0;
+    }
+}
+
 
   .wave {
     position: absolute;
